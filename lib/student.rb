@@ -42,7 +42,7 @@ class Student
     DB[:conn].execute(sql).map do |row|
       collection << self.new_from_db(row)
     end
-
+    binding.pry 
     collection
   end
 
