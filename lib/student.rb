@@ -1,3 +1,4 @@
+
 class Student
   attr_accessor :id, :name, :grade
 
@@ -41,6 +42,7 @@ class Student
     DB[:conn].execute(sql).map do |row|
       collection << self.new_from_db(row)
     end
+
     collection
   end
 
