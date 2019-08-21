@@ -22,7 +22,7 @@ class Student
   def self.all_students_in_grade_9
     collection = []
     sql = <<-SQL
-      SELECT name
+      SELECT *
       FROM students
       WHERE grade = '9'
     SQL
@@ -35,9 +35,9 @@ class Student
   def self.students_below_12th_grade
     collection = []
     sql = <<-SQL
-      SELECT name
+      SELECT *
       FROM students
-      WHERE grade = '12'
+      WHERE grade < '12'
     SQL
     DB[:conn].execute(sql).map do |row|
       collection << self.new_from_db(row)
