@@ -73,7 +73,7 @@ class Student
     DB[:conn].execute(sql).map do |row|
       collection << self.new_from_db(row)
     end
-    collection
+    collection[0]
   end
 
   def self.find_by_name(name)
